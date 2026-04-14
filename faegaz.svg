@@ -1,0 +1,153 @@
+<svg width="100%" viewBox="0 0 680 340" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>FaegAz bilim temalı ASCII animasyonu</title>
+  <desc>Dönen atom, DNA, yıldızlar ve FaegAz yazısı ile bilim temalı animasyon</desc>
+
+  <defs>
+    <style>
+      .glow-text {
+        font-family: 'Courier New', monospace;
+        font-weight: 700;
+        fill: #3B8BD4;
+      }
+      .ascii-char {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #888780;
+      }
+      .ascii-bright {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #3B8BD4;
+      }
+      .ascii-green {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #1D9E75;
+      }
+      .ascii-amber {
+        font-family: 'Courier New', monospace;
+        font-size: 11px;
+        fill: #EF9F27;
+      }
+
+      @keyframes orbit1 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      @keyframes orbit2 { from { transform: rotate(120deg); } to { transform: rotate(480deg); } }
+      @keyframes orbit3 { from { transform: rotate(240deg); } to { transform: rotate(600deg); } }
+      @keyframes pulse-nucleus { 0%,100% { opacity:1; r:7px; } 50% { opacity:0.7; r:9px; } }
+      @keyframes twinkle { 0%,100%{opacity:1} 50%{opacity:0.2} }
+      @keyframes dna-slide { from { transform: translateY(0); } to { transform: translateY(-20px); } }
+      @keyframes scanline { from { transform: translateY(0); } to { transform: translateY(280px); } }
+      @keyframes fadeloop { 0%,100%{opacity:0.5} 50%{opacity:1} }
+      @keyframes blink { 0%,100%{opacity:1} 49%{opacity:1} 50%{opacity:0} 99%{opacity:0} }
+      @keyframes progress { values: 0;220;220;0; }
+
+      .e1 { transform-origin: 110px 170px; animation: orbit1 3s linear infinite; }
+      .e2 { transform-origin: 110px 170px; animation: orbit2 3s linear infinite; }
+      .e3 { transform-origin: 110px 170px; animation: orbit3 3s linear infinite; }
+      .dna-group { animation: dna-slide 2s ease-in-out infinite alternate; }
+      .scan { animation: scanline 4s linear infinite; opacity: 0.06; }
+      .fadeloop { animation: fadeloop 3s ease-in-out infinite; }
+      .blink { animation: blink 1s step-end infinite; }
+
+      .star1 { animation: twinkle 1.1s ease-in-out infinite; }
+      .star2 { animation: twinkle 1.7s ease-in-out infinite 0.3s; }
+      .star3 { animation: twinkle 2.1s ease-in-out infinite 0.8s; }
+      .star4 { animation: twinkle 1.5s ease-in-out infinite 0.5s; }
+      .star5 { animation: twinkle 1.9s ease-in-out infinite 1s; }
+      .star6 { animation: twinkle 2.3s ease-in-out infinite 0.2s; }
+
+      .f1 { animation: twinkle 3s ease-in-out infinite; }
+      .f2 { animation: twinkle 2.5s ease-in-out infinite 0.6s; }
+      .f3 { animation: twinkle 2.8s ease-in-out infinite 0.3s; }
+      .f4 { animation: twinkle 3.2s ease-in-out infinite 1s; }
+    </style>
+  </defs>
+
+  <!-- Dark background for GitHub -->
+  <rect width="680" height="340" fill="#0d1117" rx="12"/>
+
+  <!-- Scanline effect -->
+  <rect class="scan" x="0" y="0" width="680" height="8" fill="#3B8BD4"/>
+
+  <!-- ── LEFT: ATOM ─────────────────────────────────────── -->
+  <circle cx="110" cy="170" r="7" fill="#185FA5" stroke="#3B8BD4" stroke-width="1">
+    <animate attributeName="r" values="7;9;7" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Orbit ellipses -->
+  <ellipse cx="110" cy="170" rx="62" ry="22" fill="none" stroke="#3B8BD4" stroke-width="0.5" stroke-dasharray="4 3" opacity="0.35"/>
+  <ellipse cx="110" cy="170" rx="62" ry="22" fill="none" stroke="#3B8BD4" stroke-width="0.5" stroke-dasharray="4 3" opacity="0.35" transform="rotate(60,110,170)"/>
+  <ellipse cx="110" cy="170" rx="62" ry="22" fill="none" stroke="#3B8BD4" stroke-width="0.5" stroke-dasharray="4 3" opacity="0.35" transform="rotate(-60,110,170)"/>
+
+  <!-- Electrons -->
+  <g class="e1"><circle cx="172" cy="170" r="4" fill="#3B8BD4" opacity="0.9"/></g>
+  <g class="e2"><circle cx="172" cy="170" r="4" fill="#5DCAA5" opacity="0.9"/></g>
+  <g class="e3"><circle cx="172" cy="170" r="4" fill="#EF9F27" opacity="0.9"/></g>
+
+  <text x="110" y="245" text-anchor="middle" font-family="'Courier New',monospace" font-size="9" fill="#3B8BD4" opacity="0.6">[ ATOM ]</text>
+
+  <!-- ── CENTER: FaegAz NAME ────────────────────────────── -->
+  <!-- Shadow layer -->
+  <text x="340" y="100" text-anchor="middle" font-family="'Courier New',monospace" font-size="42" font-weight="700" fill="#185FA5" opacity="0.2">FaegAz</text>
+  <!-- Main text -->
+  <text x="340" y="100" text-anchor="middle" font-family="'Courier New',monospace" font-size="42" font-weight="700" fill="#3B8BD4" class="fadeloop">FaegAz</text>
+
+  <!-- Decorative formulas -->
+  <text x="185" y="78" font-family="'Courier New',monospace" font-size="10" fill="#3B8BD4" opacity="0.5">E = mc²</text>
+  <text x="455" y="78" font-family="'Courier New',monospace" font-size="10" fill="#3B8BD4" opacity="0.5">∑∞ = π</text>
+
+  <!-- Stars -->
+  <text x="175" y="110" font-family="'Courier New',monospace" font-size="13" fill="#EF9F27" class="star1">★</text>
+  <text x="490" y="110" font-family="'Courier New',monospace" font-size="13" fill="#EF9F27" class="star2">★</text>
+  <text x="210" y="60"  font-family="'Courier New',monospace" font-size="10" fill="#1D9E75" class="star3">✦</text>
+  <text x="460" y="55"  font-family="'Courier New',monospace" font-size="10" fill="#1D9E75" class="star4">✦</text>
+  <text x="190" y="145" font-family="'Courier New',monospace" font-size="8"  fill="#3B8BD4" class="star5">·</text>
+  <text x="476" y="145" font-family="'Courier New',monospace" font-size="8"  fill="#3B8BD4" class="star6">·</text>
+
+  <!-- Subtitle -->
+  <text x="340" y="128" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" fill="#1D9E75" opacity="0.8">[ SCIENTIST · EXPLORER · CODER ]</text>
+
+  <!-- Progress bar -->
+  <rect x="230" y="148" width="220" height="6" rx="3" fill="none" stroke="#3B8BD4" stroke-width="0.8" opacity="0.4"/>
+  <rect x="230" y="148" width="220" height="6" rx="3" fill="#3B8BD4" opacity="0.08"/>
+  <rect x="230" y="148" height="6" rx="3" fill="#3B8BD4" opacity="0.7">
+    <animate attributeName="width" values="0;220;220;0" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Loading text -->
+  <text x="340" y="170" text-anchor="middle" font-family="'Courier New',monospace" font-size="9" fill="#3B8BD4">
+    LOADING UNIVERSE...
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- Divider -->
+  <text x="340" y="195" text-anchor="middle" font-family="'Courier New',monospace" font-size="10" fill="#888780" opacity="0.35">─── ◈ ─────────────────────────────── ◈ ───</text>
+
+  <!-- Science formulas -->
+  <text x="230" y="225" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" fill="#1D9E75" class="f1">∫∇²ψ</text>
+  <text x="310" y="225" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" fill="#3B8BD4" class="f2">F=ma</text>
+  <text x="390" y="225" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" fill="#EF9F27" class="f3">λν=c</text>
+  <text x="470" y="225" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" fill="#1D9E75" class="f4">ΔS≥0</text>
+
+  <!-- Terminal line -->
+  <text x="200" y="260" font-family="'Courier New',monospace" font-size="11" fill="#1D9E75" opacity="0.7">&gt; hello_world.py</text>
+  <text x="340" y="260" font-family="'Courier New',monospace" font-size="11" fill="#1D9E75" opacity="0.9">[ OK ]</text>
+  <text x="395" y="260" font-family="'Courier New',monospace" font-size="11" fill="#3B8BD4" class="blink">█</text>
+
+  <!-- ── RIGHT: DNA ──────────────────────────────────────── -->
+  <g class="dna-group">
+    <path d="M590,80 C600,95 580,110 590,125 C600,140 580,155 590,170 C600,185 580,200 590,215 C600,230 580,245 590,260" fill="none" stroke="#3B8BD4" stroke-width="1.5" opacity="0.6"/>
+    <path d="M620,80 C610,95 630,110 620,125 C610,140 630,155 620,170 C610,185 630,200 620,215 C610,230 630,245 620,260" fill="none" stroke="#1D9E75" stroke-width="1.5" opacity="0.6"/>
+    <line x1="590" y1="95"  x2="620" y2="95"  stroke="#EF9F27" stroke-width="1.5" opacity="0.7"/>
+    <line x1="590" y1="125" x2="620" y2="125" stroke="#D85A30" stroke-width="1.5" opacity="0.7"/>
+    <line x1="590" y1="155" x2="620" y2="155" stroke="#EF9F27" stroke-width="1.5" opacity="0.7"/>
+    <line x1="590" y1="185" x2="620" y2="185" stroke="#D85A30" stroke-width="1.5" opacity="0.7"/>
+    <line x1="590" y1="215" x2="620" y2="215" stroke="#EF9F27" stroke-width="1.5" opacity="0.7"/>
+    <line x1="590" y1="245" x2="620" y2="245" stroke="#D85A30" stroke-width="1.5" opacity="0.7"/>
+  </g>
+  <text x="605" y="278" text-anchor="middle" font-family="'Courier New',monospace" font-size="9" fill="#1D9E75" opacity="0.6">[ DNA ]</text>
+
+  <!-- Bottom border -->
+  <text x="340" y="305" text-anchor="middle" font-family="'Courier New',monospace" font-size="10" fill="#888780" opacity="0.25">══════════════════════════════════════════════</text>
+</svg>
